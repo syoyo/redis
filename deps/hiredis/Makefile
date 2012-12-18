@@ -67,6 +67,9 @@ hiredis-example-libevent: example-libevent.c adapters/libevent.h $(STLIBNAME)
 hiredis-example-libev: example-libev.c adapters/libev.h $(STLIBNAME)
 	$(CC) -o $@ $(REAL_CFLAGS) $(REAL_LDFLAGS) -lev example-libev.c $(STLIBNAME)
 
+hiredis-example-libuv: example-libuv.c adapters/libuv.h $(STLIBNAME)
+	$(CC) -o $@ $(REAL_CFLAGS) $(REAL_LDFLAGS) -luv example-libuv.c $(STLIBNAME)
+
 ifndef AE_DIR
 hiredis-example-ae:
 	@echo "Please specify AE_DIR (e.g. <redis repository>/src)"
